@@ -102,3 +102,10 @@ li:last-child {
   color: #cf972e;
   letter-spacing: 0.2rem;
 }
+.up {
+  background-color: #fe6a6a;
+}
+
+.down {
+  background-color: aqua;
+}

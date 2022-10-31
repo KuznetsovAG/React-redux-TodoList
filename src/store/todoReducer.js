@@ -1,14 +1,19 @@
 const ADD_TODO = "todo/add";
 const REMOVE_TODO = "todo/remove";
 
-const initialState = [];
+const initialState = {
+  tasks: [],
+};
 
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return [...state, action.payload];
+      return { ...state, tasks: [...state.tasks, action.payload] };
     case REMOVE_TODO:
-      return [...state.filter((char) => char !== action.payload)];
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.payload.id),
+      };
     default:
       return state;
   }

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TodoList = ({ todos, handleDelete }) => {
   return (
-    <>
+    <div>
       {todos?.length > 0 ? (
         <ul className="todo-list">
-          {todos.map((todo, index) => (
-            <div className="todo">
-              <li key={index}>{todo}</li>
+          {todos.map((todo) => (
+            <div key={todo.id} className="todo">
+              <li>{todo.taskValue}</li>
               <button
                 className="delete-button"
                 onClick={() => handleDelete(todo)}
@@ -22,7 +22,7 @@ const TodoList = ({ todos, handleDelete }) => {
           <p>No todos</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

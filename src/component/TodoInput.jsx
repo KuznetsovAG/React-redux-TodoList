@@ -7,7 +7,7 @@ const TodoInput = ({ state, handleChange, addTodo }) => {
         value={state}
         type="text"
         onChange={handleChange}
-        placeholder="Введите значение ..."
+        placeholder="Введите значение..."
       />
       <button type="button" className="add-button" onClick={addTodo}>
         Сохранить
