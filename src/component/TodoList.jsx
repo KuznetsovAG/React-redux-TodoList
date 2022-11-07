@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TodoList = ({ todos, handleDelete }) => {
+const TodoList = ({ todos, handleDelete, toggleTodoCompleted }) => {
   return (
-    <div>
+    <div className="container">
       {todos?.length > 0 ? (
         <ul className="todo-list">
           {todos.map((todo) => (
             <div key={todo.id} className="todo">
+              <button
+                onClick={() => toggleTodoCompleted(todo.id)}
+                className={todo.complete === false ? "down" : "up"}
+              >
+                Todo
+              </button>
               <li>{todo.taskValue}</li>
               <button
                 className="delete-button"

@@ -1,11 +1,11 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ filterDoneTodo, all, inactive }) => {
   return (
     <div>
-      <button>Все задачи</button>
-      <button>Активные</button>
-      <button>Завершенные</button>
+      <button onClick={() => all("all")}>Все задачи</button>
+      <button onClick={() => inactive("inactive")}>Завершенные</button>
+      <button onClick={() => filterDoneTodo("active")}>Активные</button>
     </div>
   );
 };
